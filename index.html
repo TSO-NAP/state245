@@ -15,16 +15,13 @@
   --border: #2a3240;
 }
 
-* {
-  box-sizing: border-box;
-}
+* { box-sizing: border-box; }
 
 body {
   margin: 0;
   background: linear-gradient(180deg, #0b0e13, #0e1116);
   color: var(--text);
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
-               Roboto, Ubuntu, Cantarell, "Helvetica Neue", Arial, sans-serif;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
   line-height: 1.6;
 }
 
@@ -36,13 +33,12 @@ body {
 
 header {
   text-align: center;
-  margin-bottom: 40px;
+  margin-bottom: 24px;
 }
 
 header h1 {
   font-size: 2.2rem;
-  margin-bottom: 8px;
-  letter-spacing: 0.03em;
+  margin-bottom: 6px;
 }
 
 header h2 {
@@ -51,31 +47,37 @@ header h2 {
   color: var(--muted);
 }
 
+.lang-switch {
+  text-align: center;
+  margin-bottom: 32px;
+}
+
+.lang-switch button {
+  background: transparent;
+  border: 1px solid var(--border);
+  color: var(--text);
+  padding: 6px 12px;
+  margin: 0 4px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.lang-switch button.active {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
 .panel {
   background: var(--panel);
   border: 1px solid var(--border);
   border-radius: 12px;
-  padding: 28px;
+  padding: 26px;
   margin-bottom: 24px;
 }
 
 .panel h3 {
   margin-top: 0;
-  margin-bottom: 12px;
   color: var(--accent);
-  letter-spacing: 0.02em;
-}
-
-.panel p {
-  margin: 0 0 12px 0;
-}
-
-.panel p:last-child {
-  margin-bottom: 0;
-}
-
-strong {
-  color: #ffffff;
 }
 
 footer {
@@ -85,125 +87,199 @@ footer {
   margin-top: 40px;
 }
 
-hr {
-  border: none;
-  border-top: 1px solid var(--border);
-  margin: 24px 0;
-}
+[data-lang] { display: none; }
+[data-lang].active { display: block; }
+
+strong { color: #fff; }
 </style>
 </head>
 
 <body>
-  <div class="container">
+<div class="container">
 
-    <header>
-      <h1>NON-AGGRESSION POLICY</h1>
-      <h2>Tiles Survive! — State #245</h2>
-    </header>
+<header>
+  <h1>NON-AGGRESSION POLICY</h1>
+  <h2>Tiles Survive! — State #245</h2>
+</header>
 
-    <div class="panel">
-      <p>
-        This document defines the <strong>only protected targets</strong> under the
-        Non-Aggression Policy currently enforced in <strong>State #245</strong>.
-      </p>
-      <p>
-        This is <strong>not a negotiated agreement</strong>, not a mutual contract,
-        and not subject to discussion, interpretation, or expansion.
-      </p>
-    </div>
+<div class="lang-switch">
+  <button onclick="setLang('en')" class="active">EN</button>
+  <button onclick="setLang('fr')">FR</button>
+  <button onclick="setLang('ru')">RU</button>
+  <button onclick="setLang('es')">ES</button>
+</div>
 
-    <div class="panel">
-      <h3>1. Scope of Protection</h3>
-      <p>
-        The following targets are protected and must not be attacked:
-      </p>
-      <p>
-        <strong>• Player Settlements and active mines located in the wilderness</strong>
-      </p>
-      <p>
-        This is the <strong>full and final scope</strong> of protection.
-      </p>
-    </div>
+<!-- ================= ENGLISH ================= -->
+<div data-lang="en" class="active">
 
-    <div class="panel">
-      <h3>2. What Is NOT Protected</h3>
-      <p>
-        Any attempt to extend protection beyond the scope defined above
-        unnecessarily complicates the functioning of the game.
-      </p>
-      <p>
-        The game is designed as a <strong>war game</strong>.
-        Additional non-aggression rules are:
-      </p>
-      <p>
-        • Difficult or impossible to enforce<br>
-        • Constantly disputed and exploited<br>
-        • Destructive to gameplay, conflict, and long-term enjoyment
-      </p>
-      <p>
-        No additional protections exist.
-      </p>
-    </div>
+<div class="panel">
+  <p>This document defines the <strong>only protected targets</strong> in State #245.</p>
+  <p>This is <strong>not a negotiated agreement</strong> and is not open to interpretation.</p>
+</div>
 
-    <div class="panel">
-      <h3>3. No Rule Expansion</h3>
-      <p>
-        There will be <strong>no exceptions</strong>, no special cases,
-        and no interpretation based on intent, feelings, or custom.
-      </p>
-      <p>
-        If something is not explicitly protected,
-        it is <strong>not protected</strong>.
-      </p>
-    </div>
+<div class="panel">
+<h3>1. Scope of Protection</h3>
+<p><strong>Player Settlements and active mines located in the wilderness</strong>.</p>
+<p>This is the full and final scope of protection.</p>
+</div>
 
-    <div class="panel">
-      <h3>4. Violations and Consequences</h3>
-      <p>
-        Any deliberate attack against a protected target constitutes a violation.
-      </p>
-      <p>
-        In such a case, the <strong>alliance of the attacked party</strong>
-        reserves the right to respond by burning settlements or taking other
-        decisive military action against the violator.
-      </p>
-      <p>
-        Enforcement is not guaranteed to include warnings
-        and is not subject to negotiation.
-      </p>
-    </div>
+<div class="panel">
+<h3>2. What Is NOT Protected</h3>
+<p>Any additional protection unnecessarily complicates a game designed as a <strong>war game</strong>.</p>
+<p>Extra rules are difficult to enforce, constantly abused, and destroy gameplay.</p>
+<p>No further protections exist.</p>
+</div>
 
-    <div class="panel">
-      <h3>5. Purpose</h3>
-      <p>
-        This policy exists solely to prevent pointless destruction of settlements
-        while preserving meaningful, unrestricted warfare elsewhere.
-      </p>
-      <p>
-        It represents the <strong>minimum limitation</strong>
-        required for a functional and competitive state.
-      </p>
-    </div>
+<div class="panel">
+<h3>3. No Rule Expansion</h3>
+<p>If something is not explicitly protected, it is <strong>not protected</strong>.</p>
+</div>
 
-    <div class="panel">
-      <h3>6. Final Statement</h3>
-      <p>
-        If you are unsure whether an action is allowed:
-      </p>
-      <p>
-        <strong>Assume it is allowed.</strong>
-      </p>
-      <p>
-        This policy is effective immediately and remains in force
-        until officially replaced.
-      </p>
-    </div>
+<div class="panel">
+<h3>4. Violations and Consequences</h3>
+<p>The <strong>alliance of the attacked party</strong> may retaliate by burning settlements or taking decisive military action.</p>
+<p>No warnings are guaranteed.</p>
+</div>
 
-    <footer>
-      State #245 · Tiles Survive!<br>
-      Last updated: December 2025
-    </footer>
+<div class="panel">
+<h3>5. Final Statement</h3>
+<p><strong>Assume it is allowed.</strong></p>
+</div>
 
-  </div>
+</div>
+
+<!-- ================= FRENCH ================= -->
+<div data-lang="fr">
+
+<div class="panel">
+<p>Ce document définit les <strong>seules cibles protégées</strong> dans l’État #245.</p>
+<p>Il ne s’agit <strong>pas d’un accord négocié</strong> et il n’est pas sujet à interprétation.</p>
+</div>
+
+<div class="panel">
+<h3>1. Champ de protection</h3>
+<p><strong>Colonies des joueurs et mines actives situées en territoire sauvage</strong>.</p>
+<p>Ceci est la portée complète et définitive de la protection.</p>
+</div>
+
+<div class="panel">
+<h3>2. Ce qui n’est PAS protégé</h3>
+<p>Toute protection supplémentaire complique inutilement un jeu conçu comme un <strong>jeu de guerre</strong>.</p>
+<p>Les règles supplémentaires sont difficiles à appliquer, constamment exploitées et détruisent le gameplay.</p>
+<p>Aucune autre protection n’existe.</p>
+</div>
+
+<div class="panel">
+<h3>3. Aucune extension des règles</h3>
+<p>Si ce n’est pas explicitement protégé, cela <strong>ne l’est pas</strong>.</p>
+</div>
+
+<div class="panel">
+<h3>4. Violations et conséquences</h3>
+<p><strong>L’alliance de la partie attaquée</strong> peut riposter en brûlant des colonies ou par toute action militaire décisive.</p>
+<p>Aucun avertissement n’est garanti.</p>
+</div>
+
+<div class="panel">
+<h3>5. Déclaration finale</h3>
+<p><strong>Considérez que c’est autorisé.</strong></p>
+</div>
+
+</div>
+
+<!-- ================= RUSSIAN ================= -->
+<div data-lang="ru">
+
+<div class="panel">
+<p>Этот документ определяет <strong>единственные защищённые цели</strong> в государстве #245.</p>
+<p>Это <strong>не договор</strong> и не подлежит обсуждению или толкованию.</p>
+</div>
+
+<div class="panel">
+<h3>1. Область защиты</h3>
+<p><strong>Поселения игроков и активные шахты, расположенные в дикой местности</strong>.</p>
+<p>Это полный и окончательный список защищённых целей.</p>
+</div>
+
+<div class="panel">
+<h3>2. Что НЕ защищено</h3>
+<p>Любая дополнительная защита усложняет игру, изначально задуманную как <strong>военную</strong>.</p>
+<p>Дополнительные правила трудно обеспечить, ими злоупотребляют и они разрушают игровой процесс.</p>
+<p>Других защит не существует.</p>
+</div>
+
+<div class="panel">
+<h3>3. Без расширений</h3>
+<p>Если что-то не указано явно, это <strong>не защищено</strong>.</p>
+</div>
+
+<div class="panel">
+<h3>4. Нарушения и последствия</h3>
+<p><strong>Альянс пострадавшей стороны</strong> имеет право на ответные действия, включая сожжение поселений.</p>
+<p>Предупреждения не гарантируются.</p>
+</div>
+
+<div class="panel">
+<h3>5. Финальное заявление</h3>
+<p><strong>Считайте, что это разрешено.</strong></p>
+</div>
+
+</div>
+
+<!-- ================= SPANISH ================= -->
+<div data-lang="es">
+
+<div class="panel">
+<p>Este documento define los <strong>únicos objetivos protegidos</strong> en el Estado #245.</p>
+<p><strong>No es un acuerdo negociado</strong> ni está sujeto a interpretación.</p>
+</div>
+
+<div class="panel">
+<h3>1. Alcance de la protección</h3>
+<p><strong>Asentamientos de jugadores y minas activas ubicadas en la zona salvaje</strong>.</p>
+<p>Este es el alcance completo y definitivo de la protección.</p>
+</div>
+
+<div class="panel">
+<h3>2. Lo que NO está protegido</h3>
+<p>Cualquier protección adicional complica innecesariamente un juego diseñado como <strong>juego de guerra</strong>.</p>
+<p>Las reglas extra son difíciles de aplicar, se abusan constantemente y destruyen la diversión.</p>
+<p>No existen protecciones adicionales.</p>
+</div>
+
+<div class="panel">
+<h3>3. Sin expansión de reglas</h3>
+<p>Si algo no está explícitamente protegido, <strong>no lo está</strong>.</p>
+</div>
+
+<div class="panel">
+<h3>4. Violaciones y consecuencias</h3>
+<p><strong>La alianza de la parte atacada</strong> puede tomar represalias, incluyendo la quema de asentamientos.</p>
+<p>No se garantizan advertencias.</p>
+</div>
+
+<div class="panel">
+<h3>5. Declaración final</h3>
+<p><strong>Asume que está permitido.</strong></p>
+</div>
+
+</div>
+
+<footer>
+State #245 · Tiles Survive!<br>
+Last updated: December 2025
+</footer>
+
+</div>
+
+<script>
+function setLang(lang) {
+  document.querySelectorAll('[data-lang]').forEach(e => e.classList.remove('active'));
+  document.querySelector(`[data-lang="${lang}"]`).classList.add('active');
+  document.querySelectorAll('.lang-switch button').forEach(b => b.classList.remove('active'));
+  event.target.classList.add('active');
+}
+</script>
+
 </body>
 </html>
